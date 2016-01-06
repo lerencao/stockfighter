@@ -1,13 +1,19 @@
 defmodule Stockfighter.Mixfile do
   use Mix.Project
 
+  @description """
+  a simple wrapper of stockfighter http api
+  """
+
   def project do
     [app: :stockfighter,
      version: "0.0.1",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     description: @description,
+     package: package]
   end
 
   # Configuration for the OTP application
@@ -32,4 +38,13 @@ defmodule Stockfighter.Mixfile do
       {:poison, "~> 1.5"}
     ]
   end
+
+  def package do
+    [
+      maintainers: ["Jiafeng Cao"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/lerencao/stockfighter"}
+    ]
+  end
+
 end
