@@ -13,7 +13,9 @@ defmodule Stockfighter.Mixfile do
      start_permanent: Mix.env == :prod,
      deps: deps,
      description: @description,
-     package: package]
+     package: package,
+     name: "Stockfighter",
+     source_url: "https://github.com/lerencao/stockfighter"]
   end
 
   # Configuration for the OTP application
@@ -35,7 +37,9 @@ defmodule Stockfighter.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.8.0"},
-      {:poison, "~> 1.5"}
+      {:poison, "~> 1.5"},
+      {:earmark, "~> 0.1", only: :dev},
+      {:ex_doc, "~> 0.11", only: :dev}
     ]
   end
 
