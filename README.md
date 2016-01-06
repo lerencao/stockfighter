@@ -1,6 +1,6 @@
 # Stockfighter
 
-**TODO: Add description**
+It is a simple wrapper of [stock fighter](http://starfighter.readme.io) http api.
 
 ## Installation
 
@@ -18,3 +18,15 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
           [applications: [:stockfighter]]
         end
 
+If not, just use `{:stockfighter, git: "https://github.com/lerencao/stockfighter.git"}`.
+
+
+## Usage
+
+``` elixir
+client = Stockfighter.Client(access_token: "your token here")
+
+Stockfighter.Client.is_up("TESTEX")
+
+client |> Stockfighter.Client.get_order_status("TESTEX", "FOOBAR", 2045)
+```
